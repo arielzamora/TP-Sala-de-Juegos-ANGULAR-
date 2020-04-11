@@ -5,7 +5,7 @@
 export const environment = {
   production: false
 };
-const settings = {timestampsInSnapshots: true};
+
 export const firebaseConfig = {
   apiKey: "AIzaSyD53gsjl3hHccj-o1a5x_4rQlllWXUnprA",
   authDomain: "chatonline-dd2e3.firebaseapp.com",

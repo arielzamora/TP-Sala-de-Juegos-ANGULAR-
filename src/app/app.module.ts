@@ -43,7 +43,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire'; 
 import { AngularFirestoreModule} from '@angular/fire/firestore'; 
 import { AngularFireStorageModule} from '@angular/fire/storage'; 
-import { firebaseConfig } from 'src/environments/environment';
+import { firebaseConfig } from '../environments/environment';
 
 import { FooterComponent } from './componentes/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
