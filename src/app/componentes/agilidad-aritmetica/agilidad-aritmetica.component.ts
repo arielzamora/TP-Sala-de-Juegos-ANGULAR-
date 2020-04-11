@@ -1,51 +1,69 @@
-import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
-import { JuegoAgilidad } from '../../clases/juego-agilidad'
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { JuegoAgilidad } from '../../clases/juego-agilidad';
+import { ToastrService } from 'ngx-toastr';
+import { DatabaseService} from '../../servicios/database.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AuthService } from '../../servicios/auth.service';
 
-import {Subscription} from "rxjs";
-import {TimerObservable} from "rxjs/observable/TimerObservable";
+
 @Component({
   selector: 'app-agilidad-aritmetica',
   templateUrl: './agilidad-aritmetica.component.html',
   styleUrls: ['./agilidad-aritmetica.component.css']
 })
 export class AgilidadAritmeticaComponent implements OnInit {
-   @Output() 
-  enviarJuego :EventEmitter<any>= new EventEmitter<any>();
-  nuevoJuego : JuegoAgilidad;
-  ocultarVerificar: boolean;
-  Tiempo: number;
-  repetidor:any;
-  private subscription: Subscription;
-  ngOnInit() {
+
+  nuevoJuego: JuegoAgilidad;
+  enJuego: boolean;
+  tiempo: number;
+  repetidor: any;
+
+  constructor(private toastr: ToastrService,public authService: AuthService,private router: Router, public databaseService : DatabaseService){
+    this.enJuego = false;
+    this.tiempo = 5;
+    this.nuevoJuego = new JuegoAgilidad(databaseService);
   }
-   constructor() {
-     this.ocultarVerificar=true;
-     this.Tiempo=5; 
-    this.nuevoJuego = new JuegoAgilidad();
-    console.info("Inicio agilidad");  
+
+  setInputNumeroIngresado(){
+    setTimeout(()=>{
+      (<HTMLInputElement>document.getElementById("input-numero-ingresado")).value = null;
+      document.getElementById("input-numero-ingresado").focus();
+    }, 1);
   }
-  NuevoJuego() {
-    this.ocultarVerificar=false;
-   this.repetidor = setInterval(()=>{ 
-      
-      this.Tiempo--;
-      console.log("llego", this.Tiempo);
-      if(this.Tiempo==0 ) {
+
+  nuevo(): void {
+    this.setInputNumeroIngresado();
+    this.enJuego = true;
+    this.nuevoJuego.generarOperacion();
+    this.repetidor = setInterval(() => {
+      this.tiempo--;
+      if (this.tiempo == 0) {
         clearInterval(this.repetidor);
         this.verificar();
-        this.ocultarVerificar=true;
-        this.Tiempo=5;
+        this.tiempo = 5;
       }
-      }, 900);
-
+    }, 900);
   }
-  verificar()
-  {
-    this.ocultarVerificar=false;
-    clearInterval(this.repetidor);
-   
 
-   
-  }  
+  verificar() {
+    if (this.nuevoJuego.verificar()) {
+      this.mostrarMensaje("Ganaste", true);
+    } else {
+      this.mostrarMensaje("Perdiste", false);
+    }
+    this.enJuego = false;
+    this.nuevoJuego.reset();
+  }
+
+  mostrarMensaje(mensaje: string = "este es el msg", ganador: boolean = false) {
+    if (ganador) {
+      this.toastr.success(mensaje, "¡Felicitaciones!");
+    } else {
+      this.toastr.error(mensaje, "Seguí participando");
+    }
+  }
+
+  ngOnInit() {
+  }
 
 }

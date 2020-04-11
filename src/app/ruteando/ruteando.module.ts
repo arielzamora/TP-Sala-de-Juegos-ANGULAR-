@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 // importo del module principal
 import { RouterModule, Routes } from '@angular/router';
 import { AdivinaElNumeroComponent } from '../componentes/adivina-el-numero/adivina-el-numero.component';
@@ -24,17 +25,19 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 
 
 // declaro donde quiero que se dirija
-const MiRuteo = [
-{path: 'Jugadores' , component: JugadoresListadoComponent},
-{path: '' , component: PrincipalComponent},
-{path: 'Login' , component: LoginComponent},
-{path: 'Mapa' , component: MapaDeGoogleComponent},
-{path: 'QuienSoy' , component: QuienSoyComponent},
-{path: 'Registro' , component: RegistroComponent},
-{path: 'Principal' , component: PrincipalComponent},
-{path: 'Listado' , component: ListadoComponent},
-{path: 'Paises' , component: ListadoDePaisesComponent},
 
+const MiRuteo : Routes =  [
+  {path: '', redirectTo: '/Principal', pathMatch: 'full' },
+  {path: 'Principal', component: PrincipalComponent , data: {animation: 'PrincipalPage'} },
+  {path: 'Jugadores' , component: JugadoresListadoComponent},
+  {path: 'Login' , component: LoginComponent, data: {animation: 'LoginPage'}},
+  {path: 'Mapa' , component: MapaDeGoogleComponent},
+  {path: 'QuienSoy' , component: QuienSoyComponent},
+  {path: 'Registro' , component: RegistroComponent},
+  {path: 'Principal' , component: PrincipalComponent, data: {animation: 'PrincipalPage'}},
+  {path: 'Listado' , component: ListadoComponent},
+  {path: 'Paises' , component: ListadoDePaisesComponent},
+  
 { path: 'Juegos' ,
 component: JuegosComponent ,
 children:

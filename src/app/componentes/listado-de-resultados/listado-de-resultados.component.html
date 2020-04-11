@@ -5,20 +5,21 @@
 
 </div-->
 
-<table class="table table-condensed">
-    <thead>
+<table class="table">
+    <thead class="thead-dark">
       <tr>
-        <th>Juego</th>
-        <th>Jugador</th>
-        <th>Resultado</th>
+        <th scope="col">Juego</th>
+        <th scope="col">Jugador</th>
+        <th scope="col">Resultado</th>
+        <th scope="col">Fecha</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let juego of listado">
-        <td>{{juego.nombre}} </td>
-        <td>{{juego.jugador}} </td> 
-        <td *ngIf="juego.gano">Gano </td>   
-        <td *ngIf="!juego.gano">Perdio</td>     
+      <tr *ngFor="let juego of resultados">
+        <td >{{juego.juego}} </td>
+        <td >{{juego.nombre}} </td> 
+        <td >{{juego.puntaje}} </td>   
+        <td >{{juego.fecha}} </td>     
       </tr>
      
     </tbody>

@@ -1,5 +1,6 @@
 
 import { Component, OnInit , Input, EventEmitter} from '@angular/core';
+import { DatabaseService } from '../../servicios/database.service';
 
 @Component({
   selector: 'app-listado-de-resultados',
@@ -11,8 +12,12 @@ export class ListadoDeResultadosComponent implements OnInit {
  listado: Array<any>;
 
 
-  constructor() {
-   }
+ public resultados : Object;
+
+ constructor(private databaseService : DatabaseService) {
+   this.resultados = databaseService.ListarResultados();
+   console.log(this.resultados);  
+ }
 
   ngOnInit() {
 

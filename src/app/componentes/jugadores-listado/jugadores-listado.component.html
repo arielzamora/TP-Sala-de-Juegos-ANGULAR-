@@ -1,27 +1,27 @@
-<ul class="nav nav-pills nav-justified">
+<!--<ul class="nav nav-pills nav-justified">
   <li class="active"><a routerLink="/Principal">Ir a inicio</a></li>
   <li><a (click)="TraerTodos()">Todos los jugadores</a></li>
   <li><a (click)="TraerGanadores()">Los ganadores</a></li>
   <li><a (click)="TraerPerdedores()">Los perdedores</a></li>
-</ul>
+</ul>-->
 
 
 
-<table class="table table-condensed">
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>usuario</th>
-      <th>cuit</th>
-      <th>sexo</th>
-      <th>gano</th>
+      <th scope="col">usuario</th>
+      <th scope="col">gano</th>
+      <th scope="col">puntaje</th>
+      <th scope="col">juego</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let jugador of listado" >
-      <td>{{jugador.usuario}} </td>
-      <td>{{jugador.cuit}} </td> 
-      <td>{{jugador.sexo | sexo| uppercase}} </td> 
+      <td >{{jugador.usuario}} </td>
       <td>{{jugador.gano}} </td> 
+      <td>{{jugador.puntaje}} </td> 
+      <td>{{jugador.juego}} </td> 
       
     </tr>
    

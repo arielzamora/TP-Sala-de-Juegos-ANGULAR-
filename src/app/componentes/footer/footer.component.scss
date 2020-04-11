@@ -1,0 +1,17 @@
+$color: #343a40;
+$colorText: rgba(255, 255, 255, 0.5);
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: $color;
+    color: $colorText;
+    font-family: inherit;
+    font-weight: 500;
+
+    .container{
+        margin: 0px;
+    }
+}

@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">{{nuevoJuego.nombre}}</h1>
+        <br>
+        <div class="row">
+        <div class="col">
+            <div class="en-juego col-12" *ngIf="enJuego">
+                    <div class="label-jugadores row">
+                        <label class="col-12">
+                            <p>
+                                <i class="fa fa-spinner fa-spin">
+                                </i> Elija su jugada</p>
+                        </label>
+                    </div>
+                    <div class="row">
+                            <div class="col-4">
+                                <img (click)="detener(1)" class="imagen-elegir-jugada" src="./././assets/imagenes/piedra.png"
+                                    alt="piedra">
+                            </div>
+                            <div class="col-4">
+                                    <img (click)="detener(2)" class="imagen-elegir-jugada" src="./././assets/imagenes/papel.png"
+                                    alt="papel">
+                            </div>
+                            <div class="col-4">
+                                <img (click)="detener(3)" class="imagen-elegir-jugada" src="./././assets/imagenes/tijera.png"
+                                    alt="tijera">
+                            </div>                   
+                    </div>
+       </div>
+    </div>
+    <div class="col">
+        <div class="label-jugadores row">
+            <p class="col-4"><b>Jugador</b></p>
+            <p class="col-4"><b>Oponente</b></p>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img class="imagen-jugada" src={{imagenJugadaUsario}} alt="">
+            </div>
+            <div class="col-4">
+                <img class="imagen-jugada" src={{imagenJugada}} alt="">
+            </div>
+        </div>
+    </div>
+     </div>
+        <br>
+       
+        <div class="row" *ngIf="!enJuego">
+            <p><button (click)="nuevo()" class="btn btn-primary btn-lg" type="button" id="button-nuevo">
+                    Nuevo juego</button></p>
+        </div>
+    </div>
+</div>

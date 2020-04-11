@@ -1,54 +1,44 @@
-<!--div>
-    <button routerLink="/Principal">Principal</button>
-    <button (click)="Juego('Adivina')">Adivina</button>
-    <button (click)="Juego('Agilidad')">Agilidad</button>
-    <button (click)="Juego('AdivinaMasListado')">Adivina+listado</button>
-    <button (click)="Juego('AgilidadaMasListado')">Agilidad+listado</button>  
-    <button routerLink="/error">Error</button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" routerLink="/Juegos"><b>Sala de Juegos</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   
-</div-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown" routerLinkActive="active">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" disabled role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"><i class="fa fa-gamepad"></i> Juegos</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/Juegos/Agilidad">Agilidad</a>
+            <a class="dropdown-item" routerLink="/Juegos/Adivina">Adivina</a>
+            <a class="dropdown-item" routerLink="/Juegos/PiedraPapelTijera">Piedra Papel o Tijera</a>
+            <a class="dropdown-item" routerLink="/Juegos/Memoria">Memoria</a>
+            <a class="dropdown-item" routerLink="/Juegos/Anagrama">Anagrama</a>
+            <a class="dropdown-item" routerLink="/Juegos/Tateti">TaTeTi</a>
 
-<!--nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" routerLink="/Principal">Inicio</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a routerLink="/Juegos">Juegos</a></li>
-        <li><a data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a></li>
-        <li><a  (click)="Juego('Agilidad')">Agilidad</a></li>
-        <li><a  (click)="Juego('AdivinaMasListado')">Adivina+listado</a></li>
-        <li><a  (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a></li>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/Resultados"><i class="fa fa-trophy"></i> Resultados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/Jugadores"><i class="fa fa-users"></i> Jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/QuienSoy"><i class="fa fa-user-secret"></i> ¿Quién
+            soy?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://github.com/arielzamora" target="_blank"><i class="fa fa-github"></i>
+            Github</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
-        </ul>
+        <span *ngIf="logueado" class="navbar-text">|| <i class="fa fa-user"></i> {{nombreUsuario}} || </span> 
+        <li *ngIf="!logueado" class="nav-item"><a class="nav-link" routerLink="/Login"><i class="fa fa-sign-in"></i> Conectarse</a></li>
+        <li *ngIf="logueado" class="nav-item"><a class="nav-link" (click)="Logout()"><i class="fa fa-sign-out"></i> Desconectarse</a></li>
+      </ul>
     </div>
-  </nav-->
-  <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-                                  
-          </button>
-          <a class="navbar-brand" routerLink="/Principal">Inicio</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a routerLink="/Juegos">Menú de Juegos</a></li>
-                <li><a data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a></li>
-                <li><a  (click)="Juego('Agilidad')">Agilidad</a></li>
-                <li><a  (click)="Juego('AdivinaMasListado')">Adivina+listado</a></li>
-                <li><a  (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
-                  <li><a href="/Login"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
-                </ul>
-        </div>
-      </div>
-    </nav>
-      
-   
+  </nav>

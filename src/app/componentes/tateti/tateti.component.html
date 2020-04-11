@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">{{nuevoJuego.nombre}}</h1>
+        <br>
+        <div *ngIf="turnoJugador && !nuevoJuego.juegoTerminado" class="row">
+            <label class="col-12">
+                <p><i class="fa fa-spinner fa-spin">
+                    </i> Realice una jugada</p>
+            </label>
+        </div>
+        <div *ngIf="enJuego" class="row tablero">
+            <table class="table table-bordered col-sm-10 col-md-6 col-lg-6">
+                <tbody>
+                    <tr>
+                        <td class="borde-right" (click)="this.marcarJugada(0,0,false)">
+                            <img src={{this.nuevoJuego.tablero[0][0]}} alt="">
+                        </td>
+                        <td class="borde-right" (click)="this.marcarJugada(0,1,false)">
+                            <img src={{this.nuevoJuego.tablero[0][1]}} alt="">
+                        </td>
+                        <td class="borde-right" (click)="this.marcarJugada(0,2,false)">
+                            <img src={{this.nuevoJuego.tablero[0][2]}} alt="">
+                        </td>
+                    </tr>
+                    <tr id="center-row">
+                        <td class="borde-right" (click)="this.marcarJugada(1,0,false)">
+                            <img src={{this.nuevoJuego.tablero[1][0]}} alt="">
+                        </td>
+                        <td class="borde-right" (click)="this.marcarJugada(1,1,false)">
+                            <img src={{this.nuevoJuego.tablero[1][1]}} alt="">
+                        </td>
+                        <td class="borde-right" (click)="this.marcarJugada(1,2,false)">
+                            <img src={{this.nuevoJuego.tablero[1][2]}} alt="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="borde-right" (click)="this.marcarJugada(2,0,false)">
+                            <img src={{this.nuevoJuego.tablero[2][0]}} alt="">
+                        </td>
+                        <td class="borde-right" (click)="this.marcarJugada(2,1,false)">
+                            <img src={{this.nuevoJuego.tablero[2][1]}} alt="">
+                        </td>
+                        <td class="borde-right" (click)="this.marcarJugada(2,2,false)">
+                            <img src={{this.nuevoJuego.tablero[2][2]}} alt="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row" *ngIf="nuevoJuego.juegoTerminado">
+            <p><button (click)="nuevo()" class="btn btn-primary btn-lg" type="button" id="button-nuevo">
+                    Nuevo juego</button></p>
+        </div>
+    </div>
+</div>
+ 

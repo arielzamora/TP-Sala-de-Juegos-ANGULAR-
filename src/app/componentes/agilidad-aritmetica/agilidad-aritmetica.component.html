@@ -1,38 +1,26 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!--app-menu></app-menu-->
-<!-- index.html -->
-
-
-<form name="juego">
-<ul>
-   <li>
-   Primer número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-  
-  </li>
-  <li>
-   Operador: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-   Segundo número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
-     
-   </li>
-  <li>
-    <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
-  </li>
-  <li>
-    <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
-  </li>
-  <li>
-    <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
-
-    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
-  </li>
-</ul>
-
-</form>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">{{nuevoJuego.nombre}}</h1>
+        <br>
+        <div *ngIf="!enJuego">
+            <p><button (click)="nuevo()" class="btn btn-primary btn-lg" type="button" id="button-nuevo">
+                    Nuevo juego</button></p>
+        </div>
+        <br>
+        <div *ngIf="enJuego">
+            <h2>{{nuevoJuego.operandoUno}} {{nuevoJuego.operador}} {{nuevoJuego.operandoDos}} = {{nuevoJuego.numeroIngresado}}</h2>
+            <label for="input-numero-ingresado">Ingrese su respuesta: </label>
+            <div class="input-group mb-3">
+                <input id="input-numero-ingresado" [(ngModel)]="nuevoJuego.numeroIngresado" type="number"
+                    class="form-control" placeholder="Ingrese un número:" aria-label="Ingrese un número:"
+                    aria-describedby="button-addon2">
+            </div>
+            <div *ngIf="nuevoJuego.operandoUno!=0">
+                <h6 *ngIf="nuevoJuego.numeroIngresado!=0" class="display-5">{{nuevoJuego.numeroIngresado}}</h6>
+                <hr class="my-4">
+                <p><i class="fa fa-spinner fa-spin">
+                    </i> Te quedan <span style="font-weight: bold">{{tiempo}}</span> segundos</p>
+            </div>
+        </div>
+    </div>
+</div>

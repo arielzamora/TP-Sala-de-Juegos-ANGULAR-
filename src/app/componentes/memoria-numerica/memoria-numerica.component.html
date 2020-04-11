@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">{{nuevoJuego.nombre}}</h1>
+        <br>
+        <div *ngIf="!enJuego">
+                <p><button (click)="nuevo()" class="btn btn-primary btn-lg" type="button" id="button-nuevo">
+                        Nuevo juego</button></p>
+        </div>
+        <div *ngIf="enJuego">
+            <div class="container tablero">
+                <div class="row" *ngIf="tiempoCumplido">
+                        <p><i class="fa fa-spinner fa-spin">
+                            </i> Te quedan <span style="font-weight: bold">{{tiempoJuego}}</span> segundos</p>
+                             
+                    <div class="col-sm-12 col-md-4" *ngIf="nuevoJuego.numerosSeleccionado!=''">
+                        <div class="row">
+                            <ul class="list-group list-group-horizontal">
+                                <li class="list-group-item flex-fill" *ngFor="let key of nuevoJuego.numerosSeleccionado">{{key}}</li>
+                              </ul>
+                        </div>
+                    </div>
+                </div> 
+                        <br>
+                        <div class="row">
+                            <div class="input-group mb-3">                          
+                                <input id="input-ingresado" [(ngModel)]="nuevoJuego.NumeroUnoIngresado" type="number"
+                                    class="form-control" placeholder="Ingrese un Numero:"
+                                    aria-label="Ingrese un Numero:" aria-describedby="button-addon2">
+                                <div [hidden]="ocultarVerificar" class="input-group-append">
+                                    <button class="btn btn-success" type="button" id="button-verificar"
+                                        (click)="verificarUsr()">Verificar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p><i class="fa fa-spinner fa-spin">
+                            </i> Ingrese algunos de los numeros mostrados anteriormente !</p>           
+               </div>
+            </div>
+    </div>
+</div>

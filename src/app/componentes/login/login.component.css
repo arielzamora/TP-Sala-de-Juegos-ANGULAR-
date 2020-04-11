@@ -1,8 +1,9 @@
-
 form {
-    border: 10px solid #f1f1f1;
-    padding: 10px;
-    background:gray;
+    border: 10px solid black;
+    padding: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input[type=text], input[type=password] {
@@ -15,7 +16,6 @@ input[type=text], input[type=password] {
 }
 
 button {
-    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -44,8 +44,7 @@ button:hover {
 }
 
 img.avatar {
-    width: 40%;
-    border-radius: 50%;
+    width: 30%;
 }
 
 .container {
@@ -58,7 +57,7 @@ span.psw {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 200px) {
     span.psw {
        display: block;
        float: none;
