@@ -1,6 +1,6 @@
 <div class="container">
     <div class="jumbotron">
-        <h1 class="display-4">{{nuevoJuego.nombre}}</h1>
+        <h1 class="display-4">Adivina el Numero</h1>
         <div *ngIf="nuevoJuego.numeroSecreto==0">
             <label for="input-numero-ingresado">Generá un número: </label>
             <p><button (click)="generarNumeroUsr()" class="btn btn-primary btn-lg" type="button" id="button-nuevo">Nuevo
@@ -24,7 +24,6 @@
             <p><i class="fa fa-spinner fa-spin">
                 </i>  Esperando que ingrese un número</p>
         </div>
-        <h3 [hidden]="!gano">Adivinaste el número</h3>
         <h3 *ngIf="nuevoJuego.numeroSecreto!=0" [hidden]="gano">Aún no ganaste</h3>
     </div>
 </div>

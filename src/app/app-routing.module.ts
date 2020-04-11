@@ -12,7 +12,6 @@ import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 import {LoginComponent}from './componentes/login/login.component';
 import { JugadoresListadoComponent } from './componentes/jugadores-listado/jugadores-listado.component';
-import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-google.component'
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component'
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ListadoComponent } from'./componentes/listado/listado.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
   { path: 'Principal',component: PrincipalComponent,canActivate:[AuthGuard] ,data: {animation: 'PrincipalPage'}},
   {path: 'Jugadores' , component: JugadoresListadoComponent,canActivate:[AuthGuard]},
   {path: 'Login' , component: LoginComponent,canActivate:[NologinGuard] ,data: {animation: 'LoginPage'}},
-  {path: 'Mapa' , component: MapaDeGoogleComponent,canActivate:[AuthGuard]},
   {path: 'QuienSoy' , component: QuienSoyComponent,canActivate:[AuthGuard],data: {animation: 'LoginPage'}},
   {path: 'Registro' , component: RegistroComponent},
   {path: 'Listado' , component: ListadoComponent,canActivate:[AuthGuard],data: {animation: 'LoginPage'}},

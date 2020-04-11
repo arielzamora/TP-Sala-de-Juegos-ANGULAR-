@@ -2,20 +2,20 @@
 <div class="container" >
   <div class="jumbotron" style="padding:50px;">
   
-    <form [formGroup]="form" (ngSubmit)="onSubmitLogin()">
+    <form [formGroup]="form">
         <div class="imgcontainer">
             <img src="./././assets/imagenes/login.png" alt="Avatar" class="avatar" max-width="104" >
           </div>
       <div class="container">
         <label><b>Usuario</b></label>
-        <input type="text" placeholder="Usuario"  [(ngModel)]="mail"  formControlName="mail" required>
+        <input type="text" placeholder="Usuario"   formControlName="mail" required>
         <ng-container *ngFor="let validation of validation_messages.mail">
           <div *ngIf="form.get('mail').hasError(validation.type) && (form.get('mail').dirty || form.get('mail').touched)">
             <label color="danger"> {{ validation.message }} </label>
           </div>
         </ng-container>
         <label><b>Clave</b></label>
-        <input type="password" placeholder="Clave"  [(ngModel)]="password" formControlName="password" required>
+        <input type="password" placeholder="Clave"  formControlName="password" required>
         <ng-container *ngFor="let validation of validation_messages.password">
           <div
             *ngIf="form.get('password').hasError(validation.type) && (form.get('password').dirty || form.get('password').touched)">
@@ -23,7 +23,7 @@
           </div>
         </ng-container> 
         <label><b>Reingrese clave</b></label>
-        <input type="password" placeholder="Clave"  [(ngModel)]="password2" formControlName="password2" required>
+        <input type="password" placeholder="Clave"  formControlName="password2" required>
         <ng-container *ngFor="let validation of validation_messages.password2">
           <div
             *ngIf="form.get('password2').hasError(validation.type) && (form.get('password2').dirty || form.get('password2').touched)">

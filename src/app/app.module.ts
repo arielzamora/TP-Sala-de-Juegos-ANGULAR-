@@ -34,7 +34,6 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 
 import { ListadoDePaisesComponent } from './componentes/listado-de-paises/listado-de-paises.component';
-import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-google.component'
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
 
@@ -75,7 +74,6 @@ import { DatabaseService} from './servicios/database.service';
     PiedraPapelTijeraComponent,
     TatetiComponent,
     ListadoDePaisesComponent,
-    MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,

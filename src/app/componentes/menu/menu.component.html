@@ -36,9 +36,8 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <span *ngIf="logueado" class="navbar-text">|| <i class="fa fa-user"></i> {{nombreUsuario}} || </span> 
-        <li *ngIf="!logueado" class="nav-item"><a class="nav-link" routerLink="/Login"><i class="fa fa-sign-in"></i> Conectarse</a></li>
-        <li *ngIf="logueado" class="nav-item"><a class="nav-link" (click)="Logout()"><i class="fa fa-sign-out"></i> Desconectarse</a></li>
+        <li  class="nav-item"><a class="nav-link" routerLink="/Login"><i class="fa fa-sign-in"></i> Conectarse</a></li>
+        <li  class="nav-item"><a class="nav-link" (click)="Logout()"><i class="fa fa-sign-out"></i> Desconectarse</a></li>
       </ul>
     </div>
   </nav>
