@@ -43,7 +43,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire'; 
 import { AngularFirestoreModule} from '@angular/fire/firestore'; 
 import { AngularFireStorageModule} from '@angular/fire/storage'; 
-import { firebaseConfig } from '../environments/environment';
+import { firebaseConfig } from 'src/environments/environment';
+
 import { FooterComponent } from './componentes/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DatabaseService} from './servicios/database.service';
@@ -89,11 +90,11 @@ import { DatabaseService} from './servicios/database.service';
     HttpClientModule,
     CommonModule,
     ToastrModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [ JuegoServiceService,
      MiHttpService,
