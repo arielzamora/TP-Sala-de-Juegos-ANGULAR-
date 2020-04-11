@@ -13,7 +13,10 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   }
-
+   
+  Logout(){
+    //falta implementar
+  }
   Juego(tipo: string) {
     switch (tipo) {
       case 'Adivina':
