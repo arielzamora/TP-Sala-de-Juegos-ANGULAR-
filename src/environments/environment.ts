@@ -6,7 +6,7 @@ export const environment = {
   production: false
 };
 
-var firebaseConfig = {
+export const  firebaseConfig = {
     apiKey: "AIzaSyBtk383_5z4IC2w-f6G5o6SrqK7PiKM56o",
     authDomain: "saladejuegos-9f5f8.firebaseapp.com",
     databaseURL: "https://saladejuegos-9f5f8.firebaseio.com",
