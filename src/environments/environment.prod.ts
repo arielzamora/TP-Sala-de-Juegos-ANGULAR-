@@ -6,14 +6,14 @@ export const environment = {
   production: true
 };
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyD53gsjl3hHccj-o1a5x_4rQlllWXUnprA",
-  authDomain: "chatonline-dd2e3.firebaseapp.com",
-  databaseURL: "https://chatonline-dd2e3.firebaseio.com",
-  projectId: "chatonline-dd2e3",
-  storageBucket: "chatonline-dd2e3.appspot.com",
-  messagingSenderId: "1080174758967",
-  appId: "1:1080174758967:web:3a91679974c7ec99"
+export const  firebaseConfig = {
+  apiKey: "AIzaSyBtk383_5z4IC2w-f6G5o6SrqK7PiKM56o",
+  authDomain: "saladejuegos-9f5f8.firebaseapp.com",
+  databaseURL: "https://saladejuegos-9f5f8.firebaseio.com",
+  projectId: "saladejuegos-9f5f8",
+  storageBucket: "saladejuegos-9f5f8.appspot.com",
+  messagingSenderId: "161678397899",
+  appId: "1:161678397899:web:0c64b6ec742287595a264e"
 };
 
 /*
