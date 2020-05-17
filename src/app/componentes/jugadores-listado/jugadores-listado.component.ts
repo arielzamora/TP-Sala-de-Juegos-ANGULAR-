@@ -22,22 +22,16 @@ export class JugadoresListadoComponent implements OnInit {
 
 
   TraerTodos(){
-    //alert("totos");  
-      this.listado= this.miJugadoresServicio.traertodos('jugadores/','todos');
-  }
-  TraerGanadores(){
-    this.miJugadoresServicio.traertodos('jugadores/','ganadores').then(data=>{
-      //console.info("jugadores listado",(data));
-      this.listado= data;
 
-    });
-  }
-  TraerPerdedores(){
-    this.miJugadoresServicio.traertodos('jugadores/','perdedores').then(data=>{
-      //console.info("jugadores listado",(data));
-      this.listado= data;
-
-    });
-  }
+      this.miJugadoresServicio.traertodos().subscribe(
+        data => {
+          this.listado = data;
+         // this.dataFiltros=this.listaPeliculas;
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  } 
 
 }

@@ -15,12 +15,26 @@ export class ListadoDeResultadosComponent implements OnInit {
  public resultados : Object;
 
  constructor(private databaseService : DatabaseService) {
-   this.resultados = databaseService.ListarResultados();
-   console.log(this.resultados);  
+   this.ListarResultados();
  }
 
   ngOnInit() {
 
+  }
+
+
+  public ListarResultados()
+  {
+
+    this.databaseService.ListarResultados().subscribe(
+      data => {
+        this.resultados = data;
+       // this.dataFiltros=this.listaPeliculas;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   ver() {

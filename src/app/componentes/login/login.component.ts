@@ -65,28 +65,15 @@ export class LoginComponent implements OnInit {
         }
       });
   }
-
-  cargarDatos(rol: Roles) {
+  CargarDefault(rol:string) {
     switch (rol) {
-      case Roles.admin:
+      case 'P':
         this.form.get('mail').setValue('admin@admin.com');
         this.form.get('password').setValue('123456');
         break;
-      case Roles.invitado:
+      case 'U':
         this.form.get('mail').setValue('invitado@gmail.com');
         this.form.get('password').setValue('222222');
-        break;
-        case Roles.usuario:
-        this.form.get('mail').setValue('usuario@gmail.com');
-        this.form.get('password').setValue('333333');
-        break;
-        case Roles.anonimo:
-        this.form.get('mail').setValue('anonimo@gmail.com');
-        this.form.get('password').setValue('444444');
-        break;
-        case Roles.tester:
-        this.form.get('mail').setValue('tester@gmail.com');
-        this.form.get('password').setValue('555555');
         break;
     }
   }

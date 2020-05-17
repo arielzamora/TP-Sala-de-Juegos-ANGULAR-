@@ -1,4 +1,5 @@
 export class Resultado{
+    public idResultado:string;
     public fecha : Date;
     public juego : string;
     public minutos : number;
@@ -6,8 +7,9 @@ export class Resultado{
     public puntaje : number;
     public nombre : string;
 
-    constructor(fecha : Date, juego : string, minutosTranscurridos : number, segundosTranscurridos : number,
+    constructor(idResultado:string,fecha : Date, juego : string, minutosTranscurridos : number, segundosTranscurridos : number,
         puntaje : number, nombre : string){
+        this.idResultado=idResultado;    
         this.fecha = fecha;
         this.juego = juego;
         this.minutos = minutosTranscurridos;

@@ -1,8 +1,11 @@
 
 <div class="container" >
-  <div class="jumbotron" style="padding:50px;">
-  
+  <div class="jumbotron" style="padding:50px;">  
     <form [formGroup]="form" (ngSubmit)="onSubmitLogin()">
+      <label><i class="fas fa-fast-forward"></i>Acceso Rápido:</label> <br>
+      <button type="button" class="btn btn-outline-danger btn-sm buttonDefault col-4" data-toggle="tooltip"
+        data-placement="top" title="Administrador" (click)="CargarDefault('P')"><i class="fas fa-user-tie"></i>
+        Administrador</button>
         <div class="imgcontainer">
             <img src="./././assets/imagenes/login.png" alt="Avatar" class="avatar" max-width="104" >
           </div>
